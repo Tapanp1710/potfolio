@@ -1,0 +1,37 @@
+[
+    {
+      "name": "Starter",
+      "price": "₹4,999",
+      "tag": "Best for individuals",
+      "features": [
+        "1 Page Website",
+        "Responsive Design",
+        "Basic SEO",
+        "Delivery in 3 Days"
+      ]
+    },
+    {
+      "name": "Pro",
+      "price": "₹9,999",
+      "tag": "Most Popular 🚀",
+      "features": [
+        "Multi-page Website",
+        "Premium UI Design",
+        "SEO Optimized",
+        "Fast Performance",
+        "Delivery in 5 Days"
+      ]
+    },
+    {
+      "name": "Business",
+      "price": "₹19,999",
+      "tag": "For serious businesses",
+      "features": [
+        "Custom Website",
+        "Advanced Animations",
+        "Full SEO Setup",
+        "Priority Support",
+        "Delivery in 5-7 Days"
+      ]
+    }
+  ]

@@ -1,26 +1,112 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
 }
+
+/* 🌌 Layer 1: Deep gradient base */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 50%);
+  animation: gradientMove 20s ease-in-out infinite alternate;
+  z-index: -3;
+}
+
+/* ✨ Layer 2: Floating blobs */
+body::after {
+  content: "";
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 60%);
+  filter: blur(120px);
+  top: -200px;
+  left: -200px;
+  animation: blobFloat 18s infinite alternate ease-in-out;
+  z-index: -2;
+}
+
+/* 🔥 Extra blob layer (more depth) */
+body .bg-blob {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04), transparent 60%);
+  filter: blur(100px);
+  bottom: -150px;
+  right: -150px;
+  animation: blobFloat2 22s infinite alternate ease-in-out;
+  z-index: -2;
+}
+
+/* 🌊 Smooth gradient motion */
+@keyframes gradientMove {
+  0% {
+    background-position: 20% 30%, 80% 70%;
+  }
+  100% {
+    background-position: 30% 40%, 70% 60%;
+  }
+}
+
+/* 🫧 Blob motion */
+@keyframes blobFloat {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  100% {
+    transform: translateY(80px) translateX(40px) scale(1.2);
+  }
+}
+
+@keyframes blobFloat2 {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-60px) translateX(-30px) scale(1.15);
+  }
+}
+
+/* 🎯 Section spacing fix */
+section {
+  scroll-margin-top: 200px;
+}
+
+/* 📩 Contact stays calm */
+.contact {
+  background: linear-gradient(to top, #0a0a0a, #000);
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.3); }
+  100% { box-shadow: 0 0 0 15px rgba(255,255,255,0); }
+}
+/* base */
+.feature-box,
+.pricing-card,
+.demo-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+/* hover effect */
+.feature-box:hover,
+.pricing-card:hover,
+.demo-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(255,255,255,0.08);
+}
+.pricing-card.popular {
+  box-shadow: 0 0 40px rgba(255,255,255,0.15);
+}
+ 

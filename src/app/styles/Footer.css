@@ -1,0 +1,53 @@
+.footer {
+    padding: 60px 20px 30px;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* top layout */
+  .footer-left,
+  .footer-links,
+  .footer-contact {
+    text-align: center;
+  }
+  
+  /* brand */
+  .footer-left h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-left p {
+    color: rgba(255,255,255,0.6);
+  }
+  
+  /* links */
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: white;
+  }
+  
+  /* contact */
+  .footer-contact span {
+    color: rgba(255,255,255,0.6);
+  }
+  
+  /* bottom */
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+  }

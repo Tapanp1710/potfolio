@@ -1,0 +1,40 @@
+/* Trust background full coverage */
+
+.trust {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Full background image */
+  .trust::after {
+    content: "";
+    position: absolute;
+    inset: 0; /* 🔥 covers entire section */
+  
+    background: url("/images/trust.png") no-repeat center;
+    background-size: cover; /* 🔥 fill full area */
+  
+    opacity: 0.35; /* reduce for readability */
+    z-index: 1;
+  
+    filter: brightness(1.5) contrast(1.1);
+    animation: floatTrust 5s ease-in-out infinite;
+  }
+  
+  /* keep content above */
+  .trust > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes floatTrust {
+    0% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.02);
+    }
+    100% {
+      transform: translateY(0px) scale(1);
+    }
+  }

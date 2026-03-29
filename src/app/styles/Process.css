@@ -1,0 +1,85 @@
+.process {
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  /* title */
+  .process-title {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+  }
+  
+  /* grid */
+  .process-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  /* card */
+  .process-card {
+    width: 260px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
+  }
+  
+  /* hover */
+  .process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255,255,255,0.08);
+  }
+  
+  /* step number */
+  .step-number {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* text */
+  .process-card p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+  }
+  /* 🌕 Moon background for Process section */
+.process {
+  position: relative;
+  overflow: hidden;
+}
+
+.process::after {
+  content: "";
+  position: absolute;
+
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 380px;
+  height: 380px;
+
+  background: url("/images/moon.png") no-repeat center;
+  background-size: contain;
+
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+/* keep all content above moon */
+.process > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  

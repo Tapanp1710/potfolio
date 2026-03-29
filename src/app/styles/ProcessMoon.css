@@ -1,0 +1,65 @@
+
+.process {
+  position: relative;
+  overflow: hidden;
+}
+
+/* STEP 3 + 4: moon background */
+/* .process::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 1;
+border: 2px solid yellow;
+
+  width: 300px;
+  height: 300px;
+
+  background: url("/images/moon.JPG") no-repeat center;
+  background-size: contain;
+
+  z-index: 10;
+} */
+
+.process::after {
+  content: "";
+  position: absolute;
+
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 800px;
+  height: 550px;
+
+  background: url("/images/moon.png") no-repeat center;
+  background-size: contain;
+
+  opacity: 0.40;
+  z-index: 1;
+
+  filter: brightness(1.3) contrast(1.2)
+          drop-shadow(0 0 40px rgba(255,255,255,0.1));
+
+  animation: floatMoon 7s ease-in-out infinite;
+  
+}
+/* keep content above */
+.process > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes floatMoon {
+  0% {
+    transform: translateY(-50%) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-60%) translateX(-10px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(-50%) translateX(0) rotate(0deg);
+  }
+}
+
